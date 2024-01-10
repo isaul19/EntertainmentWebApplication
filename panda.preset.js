@@ -22,6 +22,11 @@ export const pandaPreset = definePreset({
           },
         },
       },
+      fonts: {
+        outfit: {
+          value: "var(--font-outfit-sans)",
+        },
+      },
     },
   },
 });

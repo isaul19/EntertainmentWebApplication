@@ -1,6 +1,13 @@
 import { Navigate, createBrowserRouter } from "react-router-dom";
 import { AppLayout, AuthLayout } from "../layouts";
-import { BookmarkedPage, LoginPage, MoviesPage, RegisterPage, TvSeriesPage } from "../pages";
+import {
+  BookmarkedPage,
+  HomePage,
+  LoginPage,
+  MoviesPage,
+  RegisterPage,
+  TvSeriesPage,
+} from "../pages";
 
 export const router = createBrowserRouter([
   {
@@ -24,6 +31,9 @@ export const router = createBrowserRouter([
     children: [
       {
         index: true,
+        element: <HomePage />,
+      },
+      {
         path: "movies",
         element: <MoviesPage />,
       },
@@ -39,6 +49,6 @@ export const router = createBrowserRouter([
   },
   {
     path: "*",
-    element: <Navigate to="/auth" />,
+    element: <Navigate to="/auth/login" />,
   },
 ]);

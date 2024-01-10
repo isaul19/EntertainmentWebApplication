@@ -1,1 +1,3 @@
 @layer reset, base, tokens, recipes, utilities;
+
+@import url("./assets/css/fonts.css");

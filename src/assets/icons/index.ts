@@ -5,7 +5,6 @@ import srcIconBookmarkFull from "./icon-bookmark-full.svg";
 import srcIconCategoryMovie from "./icon-category-movie.svg";
 import srcIconCategoryTv from "./icon-category-tv.svg";
 import srcIconPlay from "./icon-play.svg";
-import srcIconSearch from "./icon-search.svg";
 import srcImageAvatar from "./image-avatar.png";
 
 // Jsx Icons ------------------------------------------------------
@@ -14,6 +13,7 @@ import { NavIconBookmark } from "./NavIconBookmark";
 import { NavIconHome } from "./NavIconHome";
 import { NavIconMovies } from "./NavIconMovies";
 import { NavIconTvSeries } from "./NavIconTvSeries";
+import { IconSearch } from "./IconSearch";
 
 export {
   srcFavicon,
@@ -21,9 +21,9 @@ export {
   srcIconBookmarkFull,
   srcIconCategoryMovie,
   srcIconCategoryTv,
-  srcIconSearch,
   srcIconPlay,
   srcImageAvatar,
+  IconSearch,
   IconLogo,
   NavIconBookmark,
   NavIconMovies,
