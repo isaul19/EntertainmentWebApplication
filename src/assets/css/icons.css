@@ -1,0 +1,16 @@
+svg.nav-icon {
+  cursor: pointer;
+}
+
+svg.nav-icon path {
+  fill: #5a698f;
+  transition: fill 0.2s;
+}
+
+svg.nav-icon:hover path {
+  fill: #ffffff;
+}
+
+svg.nav-icon:active path {
+  fill: #fc4747;
+}
