@@ -1,4 +1,4 @@
-import "@/assets/css/icons.css";
+import "@/assets/css/nav-icon.css";
 
 export const NavIconTvSeries = () => {
   return (
