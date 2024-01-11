@@ -1,35 +1,10 @@
-import { Link } from "react-router-dom";
 import { Center, styled } from "../../../styled-system/jsx";
-import {
-  NavIconBookmark,
-  NavIconHome,
-  NavIconMovies,
-  NavIconTvSeries,
-  IconLogo,
-} from "@/assets/icons";
-
-const navRoutes = [
-  {
-    to: "/app",
-    icon: <NavIconHome />,
-  },
-  {
-    to: "/app/movies",
-    icon: <NavIconMovies />,
-  },
-  {
-    to: "/app/tv-series",
-    icon: <NavIconTvSeries />,
-  },
-  {
-    to: "/app/bookmarked",
-    icon: <NavIconBookmark />,
-  },
-];
+import { AsideNavigation } from "./AsideNavigation";
+import { IconLogo } from "@/assets/icons";
 
 export const Aside = () => {
   return (
-    <styled.aside h="dvh">
+    <styled.aside h="100%">
       <styled.nav
         display="flex"
         flexDirection="column"
@@ -43,13 +18,7 @@ export const Aside = () => {
         <Center>
           <IconLogo />
         </Center>
-        <Center flexDirection="column" gap={40}>
-          {navRoutes.map((route) => (
-            <Link key={route.to} to={route.to}>
-              {route.icon}
-            </Link>
-          ))}
-        </Center>
+        <AsideNavigation />
       </styled.nav>
     </styled.aside>
   );

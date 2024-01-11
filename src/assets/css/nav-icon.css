@@ -14,3 +14,7 @@ svg.nav-icon:hover path {
 svg.nav-icon:active path {
   fill: #fc4747;
 }
+
+svg.nav-icon-active path {
+  fill: #ffffff;
+}

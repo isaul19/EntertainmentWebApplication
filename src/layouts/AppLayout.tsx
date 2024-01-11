@@ -12,7 +12,7 @@ export const AppLayout = () => {
       p={32}
       className={css({ fontSize: "15px", fontWeight: 300, fontFamily: "outfit" })}
     >
-      <Stack flexDirection="row" gap={36}>
+      <Stack flexDirection="row" gap={36} h="100%">
         <Aside />
         <Stack pt={30}>
           <SearchBar />
