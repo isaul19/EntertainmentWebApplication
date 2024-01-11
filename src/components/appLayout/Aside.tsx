@@ -1,5 +1,5 @@
 import { Center, styled } from "../../../styled-system/jsx";
-import { AsideNavigation } from "./AsideNavigation";
+import { Navigation } from "./Navigation";
 import { IconLogo } from "@/assets/icons";
 
 export const Aside = () => {
@@ -18,7 +18,7 @@ export const Aside = () => {
         <Center>
           <IconLogo />
         </Center>
-        <AsideNavigation />
+        <Navigation />
       </styled.nav>
     </styled.aside>
   );

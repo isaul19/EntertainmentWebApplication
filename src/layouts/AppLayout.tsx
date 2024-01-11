@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import { Stack, styled } from "../../styled-system/jsx";
 import { css } from "../../styled-system/css";
-import { Aside, SearchBar } from "@/components/appLayout";
+import { Aside } from "@/components/appLayout";
 
 export const AppLayout = () => {
   return (
@@ -15,7 +15,6 @@ export const AppLayout = () => {
       <Stack flexDirection="row" gap={36} h="100%">
         <Aside />
         <Stack pt={30}>
-          <SearchBar />
           <Outlet />
         </Stack>
       </Stack>

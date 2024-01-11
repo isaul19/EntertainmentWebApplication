@@ -1,2 +1,2 @@
 export { Aside } from "./Aside";
-export { SearchBar } from "./SearchBar";
+export { SearchBar } from "../shared/SearchBar";
