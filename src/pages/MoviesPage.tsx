@@ -4,7 +4,7 @@ import { SearchBar } from "@/components/appLayout";
 export const MoviesPage = () => {
   return (
     <styled.main>
-      <SearchBar placeholder="Search for movies or TV series" />
+      <SearchBar placeholder="Search for movies" />
     </styled.main>
   );
 };

@@ -28,7 +28,9 @@ export const Navigation = () => {
   return (
     <Center flexDirection="column" gap={40}>
       {getRoutes(pathName).map((route) => (
-        <Link to={route.to}>{route.icon}</Link>
+        <Link key={route.to} to={route.to}>
+          {route.icon}
+        </Link>
       ))}
     </Center>
   );
