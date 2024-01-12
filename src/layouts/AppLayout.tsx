@@ -1,12 +1,11 @@
-import { Navigate, Outlet } from "react-router-dom";
-import { Stack, styled } from "../../styled-system/jsx";
-import { css } from "../../styled-system/css";
-import { Aside } from "@/components/appLayout";
 import { useAuthenticator } from "@aws-amplify/ui-react";
+import { Navigate, Outlet } from "react-router-dom";
+import { Aside } from "@/components/appLayout";
+import { Stack, styled } from "../../styled-system/jsx";
 
 export const AppLayout = () => {
   const { user } = useAuthenticator();
-  if (user && !user.userId) return <Navigate to="/auth" />;
+  if (!user?.userId) return <Navigate to="/auth/login" />;
 
   return (
     <styled.div
@@ -14,7 +13,9 @@ export const AppLayout = () => {
       h="dvh"
       color="cs.pure-white"
       p={32}
-      className={css({ fontSize: "15px", fontWeight: 300, fontFamily: "outfit" })}
+      fontWeight={300}
+      fontSize="15px"
+      fontFamily="outfit"
     >
       <Stack flexDirection="row" gap={36} h="100%">
         <Aside />
