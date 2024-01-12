@@ -3,10 +3,9 @@ import { Navigate, Outlet } from "react-router-dom";
 import { Center } from "../../styled-system/jsx";
 
 export const AuthLayout = () => {
-  const { user } = useAuthenticator();
-  console.log({ user });
+  const { authStatus } = useAuthenticator();
 
-  if (user?.userId) return <Navigate to="/app" />;
+  if (authStatus === "authenticated") return <Navigate to="/app" />;
 
   return (
     <>

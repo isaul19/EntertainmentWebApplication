@@ -4,8 +4,9 @@ import { Aside } from "@/components/appLayout";
 import { Stack, styled } from "../../styled-system/jsx";
 
 export const AppLayout = () => {
-  const { user } = useAuthenticator();
-  if (!user?.userId) return <Navigate to="/auth/login" />;
+  const { authStatus } = useAuthenticator();
+
+  if (authStatus !== "authenticated") return <Navigate to="/auth/login" />;
 
   return (
     <styled.div

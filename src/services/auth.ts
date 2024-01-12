@@ -4,8 +4,10 @@ import { signIn, signUp } from "aws-amplify/auth";
 export const login = async ({ email, password }: LoginParams) => {
   try {
     await signIn({ username: email, password });
+    return true;
   } catch (err) {
     console.log(err);
+    return false;
   }
 };
 
@@ -21,7 +23,9 @@ export const register = async ({ email, password }: RegisterParams) => {
         autoSignIn: true,
       },
     });
+    return true;
   } catch (err) {
     console.log(err);
+    return false;
   }
 };

@@ -1,10 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { login } from "@/services/auth";
 import { css } from "../../styled-system/css";
 import { styled } from "../../styled-system/jsx";
 import { useState } from "react";
 
 export const LoginPage = () => {
+  const navigate = useNavigate();
   const [form, setForm] = useState({
     email: "",
     password: "",
@@ -21,10 +22,12 @@ export const LoginPage = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    await login({
+    const isLoginSuccess = await login({
       email: form.email,
       password: form.password,
     });
+
+    if (isLoginSuccess) navigate("/app");
   };
 
   return (
