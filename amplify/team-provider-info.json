@@ -10,6 +10,11 @@
       "StackName": "amplify-entertainmentweb-dev-184647",
       "StackId": "arn:aws:cloudformation:us-east-1:549095003249:stack/amplify-entertainmentweb-dev-184647/b05bd9c0-b0db-11ee-b9b3-0e9889f18239",
       "AmplifyAppId": "d2m8jml6arvdg7"
+    },
+    "categories": {
+      "auth": {
+        "entertainmentweb7358cddf": {}
+      }
     }
   }
 }
