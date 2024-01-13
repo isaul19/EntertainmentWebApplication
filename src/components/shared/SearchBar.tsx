@@ -7,7 +7,7 @@ interface Props {
 
 export const SearchBar = ({ placeholder }: Props) => {
   return (
-    <styled.search>
+    <styled.search fontSize="24px">
       <styled.label display="flex" gap={24} cursor="pointer">
         <IconSearch />
         <styled.input
@@ -16,7 +16,6 @@ export const SearchBar = ({ placeholder }: Props) => {
           outline="none"
           bg="transparent"
           opacity={0.5}
-          fontSize={"24px"}
           fontWeight={300}
           css={{
             _focus: {
