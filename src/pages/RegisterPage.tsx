@@ -1,10 +1,13 @@
+/* eslint-disable no-useless-escape */
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { styled } from "../../styled-system/jsx";
 import { css } from "../../styled-system/css";
 import { register } from "@/services";
+import toast from "react-hot-toast";
 
 export const RegisterPage = () => {
+  const navigate = useNavigate();
   const [form, setForm] = useState({
     email: "",
     password: "",
@@ -22,11 +25,27 @@ export const RegisterPage = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    await register({
+    if (!RegExp(/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/).test(form.email)) {
+      return toast.error("Email is not valid");
+    }
+
+    if (form.password.trim().length < 8) {
+      return toast.error("Password must be at least 8 characters");
+    }
+
+    if (form.password !== form.confirmPassword) {
+      return toast.error("Password and Repeat Password do not match");
+    }
+
+    const { success, err } = await register({
       email: form.email,
       password: form.password,
       confirmPassword: form.confirmPassword,
     });
+
+    if (success) return navigate("/app");
+
+    toast.error(err);
   };
 
   return (

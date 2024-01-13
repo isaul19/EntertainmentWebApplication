@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { css } from "../../styled-system/css";
 import { styled } from "../../styled-system/jsx";
 import { login } from "@/services";
+import toast from "react-hot-toast";
 
 export const LoginPage = () => {
   const navigate = useNavigate();
@@ -22,12 +23,14 @@ export const LoginPage = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const isLoginSuccess = await login({
+    const { success, err } = await login({
       email: form.email,
       password: form.password,
     });
 
-    if (isLoginSuccess) navigate("/app");
+    if (success) return navigate("/app");
+
+    toast.error(err);
   };
 
   return (

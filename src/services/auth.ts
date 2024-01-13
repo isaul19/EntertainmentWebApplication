@@ -1,13 +1,22 @@
 import { LoginParams, RegisterParams } from "@/types/auth";
-import { signIn, signUp, signOut } from "aws-amplify/auth";
+import { signIn, signUp, signOut, AuthError } from "aws-amplify/auth";
+
+const parserErrMessage = (err: string) => {
+  return err.replace("username", "email");
+};
 
 export const login = async ({ email, password }: LoginParams) => {
   try {
     await signIn({ username: email, password });
-    return true;
+    return {
+      success: true,
+      err: null,
+    };
   } catch (err) {
-    console.log(err);
-    return false;
+    return {
+      success: false,
+      err: err instanceof AuthError ? parserErrMessage(err.message) : "There was a mistake",
+    };
   }
 };
 
@@ -23,19 +32,29 @@ export const register = async ({ email, password }: RegisterParams) => {
         autoSignIn: true,
       },
     });
-    return true;
+    return {
+      success: true,
+      err: null,
+    };
   } catch (err) {
-    console.log(err);
-    return false;
+    return {
+      success: false,
+      err: err instanceof AuthError ? parserErrMessage(err.message) : "There was a mistake",
+    };
   }
 };
 
 export const logout = async () => {
   try {
     await signOut();
-    return true;
+    return {
+      success: true,
+      err: null,
+    };
   } catch (err) {
-    console.log(err);
-    return false;
+    return {
+      success: false,
+      err: err instanceof AuthError ? parserErrMessage(err.message) : "There was a mistake",
+    };
   }
 };
