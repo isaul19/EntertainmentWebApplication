@@ -1,5 +1,5 @@
 import { LoginParams, RegisterParams } from "@/types/auth";
-import { signIn, signUp } from "aws-amplify/auth";
+import { signIn, signUp, signOut } from "aws-amplify/auth";
 
 export const login = async ({ email, password }: LoginParams) => {
   try {
@@ -23,6 +23,16 @@ export const register = async ({ email, password }: RegisterParams) => {
         autoSignIn: true,
       },
     });
+    return true;
+  } catch (err) {
+    console.log(err);
+    return false;
+  }
+};
+
+export const logout = async () => {
+  try {
+    await signOut();
     return true;
   } catch (err) {
     console.log(err);

@@ -1,0 +1,1 @@
+export { getFirstLetter } from "./string";

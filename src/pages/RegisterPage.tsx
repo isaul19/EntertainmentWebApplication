@@ -1,8 +1,8 @@
-import { Link } from "react-router-dom";
-import { register } from "@/services/auth";
-import { css } from "../../styled-system/css";
-import { styled } from "../../styled-system/jsx";
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import { styled } from "../../styled-system/jsx";
+import { css } from "../../styled-system/css";
+import { register } from "@/services";
 
 export const RegisterPage = () => {
   const [form, setForm] = useState({
