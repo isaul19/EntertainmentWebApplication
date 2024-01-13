@@ -1,9 +1,6 @@
-import { LoginParams, RegisterParams } from "@/types/auth";
 import { signIn, signUp, signOut, AuthError } from "aws-amplify/auth";
-
-const parserErrMessage = (err: string) => {
-  return err.replace("username", "email");
-};
+import { LoginParams, RegisterParams } from "@/types";
+import { parserErrMessage } from "@/utils";
 
 export const login = async ({ email, password }: LoginParams) => {
   try {
